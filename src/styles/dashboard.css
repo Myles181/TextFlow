@@ -1,0 +1,265 @@
+/* Dashboard Animations */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Widget entrance animations */
+.dashboard-widget {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.dashboard-widget:nth-child(1) { animation-delay: 0ms; }
+.dashboard-widget:nth-child(2) { animation-delay: 100ms; }
+.dashboard-widget:nth-child(3) { animation-delay: 200ms; }
+.dashboard-widget:nth-child(4) { animation-delay: 300ms; }
+.dashboard-widget:nth-child(5) { animation-delay: 400ms; }
+.dashboard-widget:nth-child(6) { animation-delay: 500ms; }
+
+/* Hover effects */
+.widget-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.widget-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Loading skeleton animation */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Success animation for copy button */
+.copy-success {
+  animation: bounce 0.6s ease-in-out;
+}
+
+/* Achievement unlock animation */
+.achievement-unlock {
+  animation: scaleIn 0.5s ease-out, bounce 0.6s ease-in-out 0.5s;
+}
+
+/* Progress bar animation */
+.progress-animate {
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Chart bar animation */
+.chart-bar {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.chart-bar:nth-child(1) { animation-delay: 100ms; }
+.chart-bar:nth-child(2) { animation-delay: 200ms; }
+.chart-bar:nth-child(3) { animation-delay: 300ms; }
+.chart-bar:nth-child(4) { animation-delay: 400ms; }
+.chart-bar:nth-child(5) { animation-delay: 500ms; }
+.chart-bar:nth-child(6) { animation-delay: 600ms; }
+.chart-bar:nth-child(7) { animation-delay: 700ms; }
+
+/* Number count-up animation */
+.count-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Signal strength animation */
+.signal-bar {
+  animation: scaleIn 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.signal-bar:nth-child(1) { animation-delay: 0ms; }
+.signal-bar:nth-child(2) { animation-delay: 100ms; }
+.signal-bar:nth-child(3) { animation-delay: 200ms; }
+.signal-bar:nth-child(4) { animation-delay: 300ms; }
+.signal-bar:nth-child(5) { animation-delay: 400ms; }
+
+/* Quick action button animations */
+.quick-action {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quick-action:hover {
+  transform: scale(1.05);
+}
+
+.quick-action:active {
+  transform: scale(0.95);
+}
+
+/* Activity item hover animation */
+.activity-item {
+  transition: all 0.2s ease-out;
+}
+
+.activity-item:hover {
+  transform: translateX(4px);
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Achievement badge animation */
+.achievement-badge {
+  transition: all 0.3s ease-out;
+}
+
+.achievement-badge:hover {
+  transform: scale(1.05) rotate(2deg);
+}
+
+.achievement-badge.new {
+  animation: pulse 2s infinite;
+}
+
+/* Modal animation */
+.modal-enter {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.modal-backdrop {
+  animation: fadeInUp 0.2s ease-out;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  /* Ensure proper scrolling on mobile */
+  body {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+  }
+  
+  /* Optimize touch targets */
+  .quick-action {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Reduce animation delays on mobile for better performance */
+  .dashboard-widget {
+    animation-delay: 0ms !important;
+  }
+  
+  .chart-bar {
+    animation-delay: 0ms !important;
+  }
+  
+  /* Ensure widgets don't overflow on small screens */
+  .dashboard-widget {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Better spacing on mobile */
+  .widget-hover {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Responsive animations */
+@media (max-width: 768px) {
+  .dashboard-widget {
+    animation-delay: 0ms !important;
+  }
+  
+  .chart-bar {
+    animation-delay: 0ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-widget,
+  .chart-bar,
+  .signal-bar,
+  .quick-action,
+  .activity-item,
+  .achievement-badge {
+    animation: none;
+    transition: none;
+  }
+} 

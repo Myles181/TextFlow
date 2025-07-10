@@ -1,0 +1,291 @@
+/* Messaging Interface Styles */
+
+/* Message Bubble Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -8px, 0);
+  }
+  70% {
+    transform: translate3d(0, -4px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@keyframes typing {
+  0%, 60%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Message Animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.3s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+/* Typing Indicator */
+.typing-dot {
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Message Status Animations */
+.status-spinner {
+  animation: spin 1s linear infinite;
+}
+
+.status-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Call Interface Animations */
+@keyframes ring {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes callPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.ringing-animation {
+  animation: ring 1s ease-in-out infinite;
+}
+
+.call-pulse {
+  animation: callPulse 2s infinite;
+}
+
+/* Conversation List Animations */
+.conversation-item {
+  transition: all 0.2s ease-in-out;
+}
+
+.conversation-item:hover {
+  transform: translateX(4px);
+}
+
+.conversation-item.active {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+}
+
+/* Message Composer Animations */
+.composer-expand {
+  transition: height 0.2s ease-in-out;
+}
+
+.send-button-grow {
+  transition: transform 0.2s ease-in-out;
+}
+
+.send-button-grow:hover {
+  transform: scale(1.05);
+}
+
+/* Unread Badge Animation */
+@keyframes badgePulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.unread-badge {
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+/* Call Quality Indicator */
+.quality-bar {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.quality-excellent .quality-bar {
+  background-color: #10b981;
+}
+
+.quality-good .quality-bar {
+  background-color: #f59e0b;
+}
+
+.quality-poor .quality-bar {
+  background-color: #ef4444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .conversation-list {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .conversation-list.show {
+    transform: translateX(0);
+  }
+  
+  .chat-interface {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .chat-interface.show {
+    transform: translateX(0);
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .message-bubble-sent {
+    background-color: #1e40af;
+    color: white;
+  }
+  
+  .message-bubble-received {
+    background-color: #374151;
+    color: white;
+  }
+  
+  .conversation-item {
+    border-color: #374151;
+  }
+  
+  .conversation-item:hover {
+    background-color: #374151;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-slide-in-right,
+  .animate-slide-in-left,
+  .typing-dot,
+  .status-spinner,
+  .status-pulse,
+  .ringing-animation,
+  .call-pulse,
+  .unread-badge {
+    animation: none;
+  }
+  
+  .conversation-item:hover {
+    transform: none;
+  }
+  
+  .send-button-grow:hover {
+    transform: none;
+  }
+}
+
+/* Focus States */
+.message-bubble:focus,
+.conversation-item:focus,
+.send-button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .message-bubble-sent {
+    border: 2px solid #1e40af;
+  }
+  
+  .message-bubble-received {
+    border: 2px solid #374151;
+  }
+  
+  .unread-badge {
+    border: 2px solid #ef4444;
+  }
+} 

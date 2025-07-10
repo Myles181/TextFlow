@@ -1,0 +1,158 @@
+{
+  "name": "TextFlow - Virtual Phone Numbers",
+  "short_name": "TextFlow",
+  "description": "Global virtual phone numbers for calls and SMS with advanced analytics",
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1E3A8A",
+  "background_color": "#FFFFFF",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["communication", "business", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Send Message",
+      "short_name": "Message",
+      "description": "Send a new message",
+      "url": "/dashboard/messages/new",
+      "icons": [
+        {
+          "src": "/icons/message-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Make Call",
+      "short_name": "Call",
+      "description": "Make a phone call",
+      "url": "/dashboard/calls/new",
+      "icons": [
+        {
+          "src": "/icons/call-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "View Analytics",
+      "short_name": "Analytics",
+      "description": "View usage analytics",
+      "url": "/dashboard/analytics",
+      "icons": [
+        {
+          "src": "/icons/analytics-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Manage Numbers",
+      "short_name": "Numbers",
+      "description": "Manage your phone numbers",
+      "url": "/dashboard/numbers",
+      "icons": [
+        {
+          "src": "/icons/numbers-shortcut.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile-dashboard.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Dashboard view on mobile"
+    },
+    {
+      "src": "/screenshots/mobile-messages.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Messages interface"
+    },
+    {
+      "src": "/screenshots/desktop-analytics.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Analytics dashboard on desktop"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "tel",
+      "url": "/dashboard/calls/new?number=%s"
+    },
+    {
+      "protocol": "sms",
+      "url": "/dashboard/messages/new?number=%s"
+    }
+  ]
+} 
